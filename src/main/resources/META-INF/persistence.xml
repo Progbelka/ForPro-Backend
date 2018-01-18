@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+ http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+	version="1.0">
+
+	<persistence-unit name="forpro" transaction-type="JTA">
+		<jta-data-source>forpro</jta-data-source>
+		<class>de.hszg.stud.svtsar.forpro_backend.entity.Product</class>
+		<class>de.hszg.stud.svtsar.forpro_backend.entity.Category</class>
+		<class>de.hszg.stud.svtsar.forpro_backend.entity.ProductInStock</class>
+		<class>de.hszg.stud.svtsar.forpro_backend.entity.ProductInStore</class>
+		<class>de.hszg.stud.svtsar.forpro_backend.entity.Stock</class>
+		<class>de.hszg.stud.svtsar.forpro_backend.entity.Store</class>
+		<properties>
+			<property name="javax.persistence.schema-generation.database.action"
+				value="none" />
+			<!-- >property name="eclipselink.ddl-generation" value="none" /> <property 
+				name="eclipselink.ddl-generation.output-mode" value="database" / -->
+		</properties>
+	</persistence-unit>
+</persistence>
+
