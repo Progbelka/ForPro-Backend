@@ -82,6 +82,14 @@ public class ProductResource {
 	}
 	
 	@GET
+	@Path("findByName")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response find(@QueryParam("name") String name) {
+		Product product = productRepository.findByName(name);
+		return Response.ok(product).build();
+	}
+	
+	@GET
 	@Path("deleteById")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response delete(@QueryParam("id") int id){

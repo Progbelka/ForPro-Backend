@@ -14,9 +14,7 @@ public abstract class Repository<T> {
 	private Class<T> entityClass;
 
 	public Repository(Class<T> entityClass) {
-		// EntityManagerFactory factory =
-		// Persistence.createEntityManagerFactory("forpro");
-		// this.entityManager = factory.createEntityManager();
+
 		this.entityClass = entityClass;
 	}
 
@@ -28,6 +26,12 @@ public abstract class Repository<T> {
 
 	public T find(int id) {
 		T foundEntity = getEntityManager().find(entityClass, id);
+
+		return foundEntity;
+	}
+	
+	public T findByName(String name) {
+		T foundEntity = getEntityManager().find(entityClass, name);
 
 		return foundEntity;
 	}
